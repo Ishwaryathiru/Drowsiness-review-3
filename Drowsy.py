@@ -58,7 +58,7 @@ while True:
         Predictions = max(Prediction[0])
         print(Predictions)
         
-        if Predictions >= 0.9:
+        if Predictions >= 0.98:
             status = "Open Eyes"
             cv2.putText(frame, status, (150, 150), font, 3, (0, 255, 0), 2, cv2.LINE_4)
 
@@ -71,7 +71,7 @@ while True:
             cv2.putText(frame, status, (150, 150), font, 3, (0, 0, 255), 2, cv2.LINE_4)
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
             
-            if counter > 3:
+            if counter > 5:
                 x1, y1, w1, h1 = 0, 0, 175, 75
                 cv2.rectangle(frame, (x1, x1), (x1+w1, y1+h1), (0, 0, 0), -1)
                 cv2.putText(frame, 'Sleep Alert !!', (x1+int(w1/10), y1+int(h1/2)), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
